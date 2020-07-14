@@ -8,9 +8,15 @@ class PostsController < ApplicationController
  end
 
  def create
+<<<<<<< Updated upstream
   Post.create(content: params[:content])
   redirect_to action: :index
  end
+=======
+  post = Post.create(content: params[:content], checked: false)
+  render json:{ post: post }
+end
+>>>>>>> Stashed changes
 
  def checked
    post = Post.find(params[:id])
